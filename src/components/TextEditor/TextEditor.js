@@ -3,6 +3,7 @@ import Quill from 'quill'
 import "quill/dist/quill.snow.css"
 import { io } from 'socket.io-client'
 import { useParams } from 'react-router-dom'
+import './TextEditor.css'
 
 const TOOLBAR_OPTIONS = [
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -103,7 +104,8 @@ function TextEditor() {
 
 
     return (
-        <div ref={wrapperRef} id="container">
+        <div className="doc-wrap">
+            <div ref={wrapperRef} id="container"></div>
         </div>
     )
 }

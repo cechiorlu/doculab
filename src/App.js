@@ -1,5 +1,6 @@
 import './App.css';
-import TextEditor from './components/TextEditor'
+import TextEditor from './components/TextEditor/TextEditor'
+import Landing from './components/Landing/Landing'
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,9 +14,10 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Redirect to={`/documents/${uuidv4()}`}/>
+          <Landing />
+          {/* <Redirect to={`/documents/${uuidv4()}`} /> */}
         </Route>
-        <Route path="/documents/:id">
+        <Route path="/document/:id">
           <TextEditor />
         </Route>
       </Switch>
