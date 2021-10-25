@@ -1,0 +1,23 @@
+.drop-wrap {
+    padding: 10px 0;
+    font-size: 14px;
+    width: 220px;
+    height: auto;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    border-radius: 8px;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    transform: translate(-30px, 15px);
+    background-color: #ffffff;
+}
+
+.select-option {
+    margin: 0;
+    padding: 15px 10px 15px 30px;
+    transition: all 0.25s ease 0s;
+}
+
+.select-option:hover {
+    background-color: #f1f3f4;
+}
