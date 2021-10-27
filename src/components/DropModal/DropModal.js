@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './DropModal.css'
 
 export default function DropModal({ options, visible, onSelect }) {

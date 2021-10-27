@@ -1,0 +1,64 @@
+.document {
+    position: relative;
+    width: 100%;
+}
+
+.document-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    z-index: 1;
+}
+
+#doc-title {
+    padding: 3px 7px;
+    border: 1px solid rgba(241, 243, 244, 0);
+    font-size: 18px;
+    border-radius: 2px;
+    width: 280px;
+    margin-left: 10px;
+    background-color: #ffffff;
+}
+
+#doc-title:hover {
+    border: 1px solid rgb(241, 243, 244);
+}
+
+#doc-title:focus {
+    outline-color: #1a73e8;
+}
+
+.tag {
+    padding: 2px 7px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: 1px solid rgba(241, 243, 244, 0);
+}
+
+.share-btn {
+    border: 1px solid rgba(241, 243, 244, 0);
+    border-radius: 4px;
+    background-color: #1a73e8;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 9px 16px 10px 12px;
+    cursor: pointer;
+}
+
+.share-btn:hover{
+    background-color: rgba(26, 115, 232,0.9);
+}
+
+.share-btn .fa-link{
+    margin-right: 5px;
+}

@@ -30,10 +30,10 @@ export default function Landing() {
     }
 
     return (
-        <div className="page-wrap">
-            <div className="header">
+        <div className="landing">
+            <div className="landing-header">
                 <a href="/" className="logo-group">
-                    <img src={Logo} className="logo" />
+                    <img src={Logo} className="logo" alt="logo" />
                     <h1>Docs</h1>
                 </a>
                 <div className="search">
@@ -86,7 +86,7 @@ export default function Landing() {
                     </div>
                 </div>
 
-                <Gallery />
+                <Gallery layout={grid ? "grid" : "list"} sort={sort} />
 
                 <div className="add-new-doc" onClick={handleRoute}>
                     <div className="add-doc-btn" style={{ backgroundImage: `url(${NewDocIcon})` }}></div>

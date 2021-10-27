@@ -1,5 +1,5 @@
 import './App.css';
-import TextEditor from './components/TextEditor/TextEditor'
+import Document from './components/Document/Document';
 import Landing from './components/Landing/Landing'
 import {
   BrowserRouter as Router,
@@ -19,7 +19,7 @@ function App() {
           <Landing />
         </Route>
         <Route path="/document/:id">
-          <TextEditor />
+          <Document />
         </Route>
       </Switch>
     </Router>

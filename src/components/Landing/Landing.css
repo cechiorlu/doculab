@@ -2,14 +2,14 @@ a {
     text-decoration: none;
 }
 
-.page-wrap {
+.landing {
     width: 92%;
     min-width: 1080px;
     margin: auto;
     margin-top: 5px;
 }
 
-.header {
+.landing-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@ a {
 }
 
 .logo {
-    width: 40px;
+    width: 37px;
     height: 40px;
 }
 
@@ -38,7 +38,7 @@ a {
     width: 100%;
     position: relative;
     padding: 15px 15px 15px 60px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 16px;
     border: none;
     background: #f1f3f4;

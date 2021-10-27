@@ -104,7 +104,7 @@ function TextEditor() {
 
 
     return (
-        <div className="doc-wrap">
+        <div className="text-editor">
             <div ref={wrapperRef} id="container"></div>
         </div>
     )
