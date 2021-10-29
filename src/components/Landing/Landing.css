@@ -153,6 +153,7 @@ a {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: #fff;
 }
 
 .add-doc-btn {
