@@ -69,3 +69,15 @@
 .share-btn .fa-link {
     margin-right: 5px;
 }
+
+.copy-notification{
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+}
