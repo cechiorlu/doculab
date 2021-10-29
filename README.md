@@ -28,3 +28,4 @@ rules:
 - Add "print/download doc" feature
 - Add collaborators gallery
 - Add "last edit" time
+- Add keyboard shortcuts

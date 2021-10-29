@@ -40,7 +40,7 @@ export default function Document() {
                 <button className="tag">
                     .docx
                 </button>
-                <i class="fa fa-cloud-upload" aria-hidden="true" />
+                <button className="saved"><i class="fa fa-check-square-o" aria-hidden="true" /> saved</button>
                 <button className="share-btn" onClick={() => { }}>
                     <i class="fa fa-link" aria-hidden="true" />
                     Share
