@@ -17,13 +17,12 @@ const TOOLBAR_OPTIONS = [
     ["clean"],
 ]
 
-const SAVE_INTERVAL = 4000
+const SAVE_INTERVAL = 2000
 
-function TextEditor() {
+function TextEditor({ title }) {
     const { id: documentId } = useParams()
     const [socket, setSocket] = useState()
     const [quill, setQuill] = useState()
-
 
     useEffect(() => {
         const s = io("http://localhost:4000")
@@ -38,12 +37,19 @@ function TextEditor() {
         if (socket == null || quill == null) return
 
         socket.once('load-document', document => {
-            quill.setContents(document)
+            quill.setContents(document.data)
             quill.enable()
         })
 
         socket.emit('get-document', documentId)
     }, [socket, quill, documentId])
+
+
+    useEffect(() => {
+        if (socket == null) return
+        socket.emit('set-document-title', title)
+    }, [title, socket])
+
 
     useEffect(() => {
         if (socket == null || quill == null) return
@@ -56,6 +62,7 @@ function TextEditor() {
             clearInterval(interval)
         }
     }, [socket, quill])
+
 
     useEffect(() => {
         if (socket == null || quill == null) return
@@ -70,6 +77,7 @@ function TextEditor() {
             socket.off('receive-changes', handler)
         }
     }, [socket, quill])
+
 
     useEffect(() => {
         if (socket == null || quill == null) return
@@ -86,6 +94,7 @@ function TextEditor() {
         }
     }, [socket, quill])
 
+
     const wrapperRef = useCallback(wrapper => {
         if (wrapper === null) return
 
@@ -95,7 +104,7 @@ function TextEditor() {
         const q = new Quill(editor, {
             theme: 'snow',
             modules: { toolbar: TOOLBAR_OPTIONS }
-        })  
+        })
 
         q.disable()
         q.setText('Loading...')

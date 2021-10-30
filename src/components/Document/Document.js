@@ -10,7 +10,6 @@ export default function Document() {
     const [URL, getURL] = useState('')
     const [notification, setNotification] = useState(false)
 
-
     // assign web title to ducument title
     useEffect(() => {
         seo({
@@ -18,10 +17,12 @@ export default function Document() {
         })
     })
 
+    // Get page url
     useEffect(() => {
         getURL(window.location.href)
     }, [])
 
+    // Page title input handlers
     const handleInputChange = e => {
         setInputValue(e.target.value)
     }
@@ -60,9 +61,9 @@ export default function Document() {
                 <button className="tag">
                     .docx
                 </button>
-                <button className="saved"><i class="fa fa-check-square-o" aria-hidden="true" /> saved</button>
+                <button className="saved"><i className="fa fa-check-square-o" aria-hidden="true" /> saved</button>
                 <button className="share-btn" onClick={urlToClipboard}>
-                    <i class="fa fa-link" aria-hidden="true" />
+                    <i className="fa fa-link" aria-hidden="true" />
                     Share
                 </button>
                 <div className="user-profile">
@@ -71,7 +72,7 @@ export default function Document() {
                 </div>
             </div>
 
-            <TextEditor />
+            <TextEditor title={docTitle} />
             <div className="copy-notification"
                 style={{ display: notification ? "block" : "none" }}
             >
