@@ -17,15 +17,15 @@ rules:
 
 ### Todo
 
-- Develop basic UI
-- Implement Text editor
-- Improve UI for text editor
-- Publish version 1.0
-- Enable user accounts/profiles
-- set page title to document title/name  
-- implement auth and restricted access
-- Enable manual save and document name change
-- Add "print/download doc" feature
-- Add collaborators gallery
-- Add "last edit" time
-- Add keyboard shortcuts
+- [x] Develop basic UI
+- [x] Implement Text editor
+- [x] Improve UI for text editor
+- [x] Publish version 1.0
+- [ ] Enable user accounts/profiles
+- [x] set page title to document title/name  
+- [ ] implement auth and restricted access
+- [x] Enable manual save and document name change
+- [ ] Add "print/download doc" feature
+- [ ] Add collaborators gallery
+- [x] Add "last edit" time
+- [x] Add keyboard shortcuts
