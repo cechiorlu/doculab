@@ -12,8 +12,7 @@ I use google docs a lot and find its real time collaboration feature fascinating
 This project is open to contributions.
 
 rules:
-1. No additional module
-2. Have fun
+1. Have fun
 
 ### Todo
 
@@ -27,5 +26,5 @@ rules:
 - [x] Enable manual save and document name change
 - [ ] Add "print/download doc" feature
 - [ ] Add collaborators gallery
-- [x] Add "last edit" time
+- [ ] Add "last edit" time
 - [x] Add keyboard shortcuts
