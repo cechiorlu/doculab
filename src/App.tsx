@@ -7,9 +7,19 @@ import {
   Route,
   Redirect
 } from 'react-router-dom'
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
+import { createClient, Provider } from 'urql';
 
-function App() {
-  return (
+const client = createClient({
+  url: 'http://localhost:4000/graphql',
+  fetchOptions: {
+    credentials: 'include'
+  }
+});
+
+const App: React.FC = () => (
+  <Provider value={client}>
     <Router>
       <Switch>
         <Route path="/" exact>
@@ -21,9 +31,15 @@ function App() {
         <Route path="/document/:id">
           <Document />
         </Route>
+        <Route path="/register" exact>
+          <Register />
+        </Route>
+        <Route path="/login" exact>
+          <Login />
+        </Route>
       </Switch>
     </Router>
-  );
-}
+  </Provider>
+);
 
 export default App;

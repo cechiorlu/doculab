@@ -1,9 +1,16 @@
 import React, { useEffect, useCallback, useState } from 'react'
 import Quill from 'quill'
 import "quill/dist/quill.snow.css"
-import { io } from 'socket.io-client'
+import { io, Socket } from 'socket.io-client'
 import { useParams } from 'react-router-dom'
 import './TextEditor.css'
+
+interface TextEditorProps {
+    title: string
+}
+
+type ISocket = Socket | null
+type IQuill = Quill | null
 
 const TOOLBAR_OPTIONS = [
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -19,10 +26,11 @@ const TOOLBAR_OPTIONS = [
 
 const SAVE_INTERVAL = 2000
 
-function TextEditor({ title }) {
+const TextEditor: React.FC<TextEditorProps> = ({ title }) => {
+    // @ts-ignore
     const { id: documentId } = useParams()
-    const [socket, setSocket] = useState()
-    const [quill, setQuill] = useState()
+    const [socket, setSocket] = useState<ISocket>()
+    const [quill, setQuill] = useState<IQuill>()
 
     useEffect(() => {
         const s = io("http://localhost:4000")
@@ -67,7 +75,7 @@ function TextEditor({ title }) {
     useEffect(() => {
         if (socket == null || quill == null) return
 
-        const handler = delta => {
+        const handler = (delta: any) => {
             quill.updateContents(delta)
         }
 
@@ -82,7 +90,7 @@ function TextEditor({ title }) {
     useEffect(() => {
         if (socket == null || quill == null) return
 
-        const handler = (delta, oldDelta, source) => {
+        const handler = (delta: any, oldDelta: any, source: string) => {
             if (source !== 'user') return
             socket.emit('send-changes', delta)
         }
@@ -107,7 +115,7 @@ function TextEditor({ title }) {
         })
 
         q.disable()
-        q.setText('Loading...')
+        q.setText('Type @ to insert')
         setQuill(q)
     }, [])
 

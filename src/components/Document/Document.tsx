@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import './Document.css'
-import TextEditor from '../TextEditor/TextEditor'
-import seo from '../../helpers/seo'
-import Logo from '../../images/docs-icon.png'
+import React, { useEffect, useState } from 'react';
+import './Document.css';
+import TextEditor from '../TextEditor/TextEditor';
+import seo from '../../utils/seo';
+//@ts-ignore
+import Logo from '../../images/docs-icon.png';
 
-export default function Document() {
+
+const Document: React.FC = () => {
     const [inputValue, setInputValue] = useState('New Document')
     const [docTitle, setDocTitle] = useState(inputValue)
     const [URL, getURL] = useState('')
@@ -23,7 +25,7 @@ export default function Document() {
     }, [])
 
     // Page title input handlers
-    const handleInputChange = e => {
+    const handleInputChange = (e: any) => {
         setInputValue(e.target.value)
     }
 
@@ -31,7 +33,7 @@ export default function Document() {
         setDocTitle(inputValue)
     }
 
-    const handleEnterKey = e => {
+    const handleEnterKey = (e: any) => {
         if (e.keyCode === 13) {
             handleTitleChange()
             e.target.blur()
@@ -81,3 +83,5 @@ export default function Document() {
         </div>
     )
 }
+
+export default Document

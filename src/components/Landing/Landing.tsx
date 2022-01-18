@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import './Landing.css'
+//@ts-ignore
 import Logo from '../../images/docs-icon.png'
+//@ts-ignore
 import NewDocIcon from '../../images/newdoc.png'
 import DropModal from '../DropModal/DropModal'
 import { useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid'
 import Gallery from '../Gallery/Gallery'
+import { filterOptions, sortOptions } from "../../utils/types";
 
 
-export default function Landing() {
+export const Landing : React.FC = () => {
     const [filterModal, toggleFilterModal] = useState(false)
-    const [filter, setFilter] = useState('Owned by anyone')
+    const [filter, setFilter] = useState<filterOptions>('Owned by anyone')
     const [grid, toggleView] = useState(true)
     const [sortModal, toggleSortModal] = useState(false)
-    const [sort, setSortCriteria] = useState('Last opened by me')
+    const [sort , setSortCriteria] = useState<sortOptions>('Last opened by me')
 
     const history = useHistory();
 
@@ -21,11 +24,11 @@ export default function Landing() {
         history.push(`/document/${uuidv4()}`);
     }
 
-    const handleFilterChange = (value) => {
+    const handleFilterChange = (value: filterOptions) => {
         setFilter(value)
     }
 
-    const handleSortChange = (value) => {
+    const handleSortChange = (value: sortOptions) => {
         setSortCriteria(value)
     }
 
@@ -86,7 +89,7 @@ export default function Landing() {
                     </div>
                 </div>
 
-                <Gallery layout={grid ? "grid" : "list"} sort={sort} />
+                <Gallery layout={grid ? "grid" : "list"} sort={sort as sortOptions} />
 
                 <div className="add-new-doc" onClick={handleRoute}>
                     <div className="add-doc-btn" style={{ backgroundImage: `url(${NewDocIcon})` }}></div>
@@ -96,3 +99,7 @@ export default function Landing() {
         </div>
     )
 }
+
+
+
+export default Landing

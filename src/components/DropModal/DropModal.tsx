@@ -1,7 +1,13 @@
 import React from 'react'
 import './DropModal.css'
 
-export default function DropModal({ options, visible, onSelect }) {
+interface DropModalProps {
+    options: string[],
+    visible: boolean,
+    onSelect: (arg: any) => any
+}
+
+export const DropModal: React.FC<DropModalProps> = ({ options, visible, onSelect }) => {
 
     return (
         <div className="drop-wrap"
@@ -13,3 +19,5 @@ export default function DropModal({ options, visible, onSelect }) {
         </div>
     )
 }
+
+export default DropModal
